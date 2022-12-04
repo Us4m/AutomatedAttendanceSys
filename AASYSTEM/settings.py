@@ -144,11 +144,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'AAS')
 
 
-STATIC_URL = '/ImagesAttendance/'
-STATICFILES_DIRS = [
-    BASE_DIR / "AAS/ImagesAttendance",
-    os.path.join(BASE_DIR, 'staticfiles-build', "static")
-]
+# STATIC_URL = '/ImagesAttendance/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "AAS/ImagesAttendance",
+#     # os.path.join(BASE_DIR, 'staticfiles-build', "static")
+# ]
 
 # STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
