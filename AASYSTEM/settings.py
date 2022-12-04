@@ -155,7 +155,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'ImagesAttendance/'
 STATICFILES_DIRS = [
     BASE_DIR / "AAS/ImagesAttendance",
-    os.path.join(BASE_DIR, 'staticfiles-build', "static")
+    
 ] 
 
 # Default primary key field type
