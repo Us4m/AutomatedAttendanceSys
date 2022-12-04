@@ -1,1 +1,4 @@
-web: bundle exec rails server -p $PORT
+release: python manage.py makemigrations --no-input
+release: python manage.py migrate --no-input
+
+web: gunicorn AASYSTEM.wsgi
