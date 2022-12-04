@@ -150,7 +150,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'AAS')
 #     # os.path.join(BASE_DIR, 'staticfiles-build', "static")
 # ]
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
