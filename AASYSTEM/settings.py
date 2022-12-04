@@ -152,7 +152,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'AAS')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = 'ImagesAttendance/'
+STATIC_URL = '/ImagesAttendance/'
 STATICFILES_DIRS = [
     BASE_DIR / "AAS/ImagesAttendance",
     
