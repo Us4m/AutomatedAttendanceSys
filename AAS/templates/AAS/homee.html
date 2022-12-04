@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/media/uploads/logo.png" type="image/x-icon">
+    <title> {% block title %}Welcome{% endblock title %} | AAS</title></head>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+        }
+        .i{
+            display: flex;
+            flex-direction: column;
+        }
+        .ini{
+            display: flex;
+        }
+        .inii{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lgo{
+            margin-left: 40px;
+        }
+        .lgo img{
+            width: 200px;
+            height: 200px;
+        }
+        .iniii{
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+
+        .dwncnt{
+            width: 100vw;
+            height: 150px;
+            background: linear-gradient(90deg, #065C71 8.33%, #013845 48.52%, #065C71 75.37%);
+            border-radius: 27px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+
+            }
+        .cpr{
+        margin-top: 70px;
+        color: #FFFFFF;
+        font-family:  'DM Sans', sans-serif;
+        font-size: 20px;
+
+        }
+        .admnimg{
+            width: 30vh;
+        }
+
+        .tchrimg{
+            width: 50vh;
+        }
+
+        .stdntimg{
+            width: 30vh;
+        }
+        .ptg{
+            font-size: 35px;
+            font-weight: 800;
+            color: #001A25;
+            font-family:  'DM Sans', sans-serif;
+        }
+        .pline{
+            color: #909090;
+            font-size:20px ;
+            text-align: center;
+
+        }
+        .tag{
+            margin-left: 120px;
+            margin-top: 40px;
+        }
+        .inii{
+            font-family: 'Inter' , sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 46px;
+            color: #063E4B;
+            line-height: 92px;
+            text-align: center;
+            padding: 30px;
+        }
+        .iniii{
+            margin: 40px;
+            
+        }
+       
+        a{
+            text-decoration: none;
+            color: #001A25;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: 400;
+            font-family: 'DM Sans' , sans-serif;
+        }
+        .admnttl{
+            margin-top: 20px;
+            padding: 20px   ;
+        }
+        .tchrttl{
+            margin-top: 20px;
+            padding: 20px   ;
+        }
+        .studntname{
+            margin-top: 20px;
+            padding: 20px   ;
+        }
+    </style>
+<body>
+    <div class="mainn">
+        <div class="i">
+
+            <div class="ini">
+                <div class="lgo">
+                    <a href="/"><img src="/media/uploads/logoaas.svg" alt="logo"></a>
+                    
+                </div>
+                <div class="tag">
+                    <div class="ptg">Welcome to Our Attendance Portal</div>
+                    <div class="pline">Experience the best User Friendly Enviroment </div>
+                </div>
+            </div>
+
+
+            <div class="inii">Experience As</div>
+
+
+            <div class="iniii">
+                <a href="admin">
+                <div class="admn">
+                    <div class="admnimg">
+                        <img src="/media/uploads/admin.svg" alt="admin">
+                    </div>
+                    <div class="admnttl">Admin</div>
+                </div>
+                 </a>
+                <a href="index">
+                <div class="teachr">
+                    <div class="tchrimg">
+                        <img src="/media/uploads/teachr.svg" alt="teacher">
+                    </div>
+                    <div class="tchrttl">Teacher</div>
+                </div>
+                </a>
+                <a href="">
+                <div class="studnt">
+                    <div class="stdntimg">
+                        <img src="/media/uploads/studnf.svg" alt="">
+                    </div>
+                    <div class="studntname">Student</div>
+                </div>
+                </a>
+            </div>
+
+
+        </div>
+            <div class="dwncnt"> 
+              <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
+            </div>
+        
+    </div>
+</body>
+</html>

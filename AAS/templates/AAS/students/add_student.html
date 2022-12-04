@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> {% block title %}Add Student{% endblock title %}| AAS</title>
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins',sans-serif;
+        }
+        body{
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          background: linear-gradient(135deg, #71b7e6, #59b0b6);
+        }
+        .container{
+          margin-top: 50px;
+          max-width: 900px;
+          max-height: 1000px;
+          width: 100%;
+          background-color: #fff;
+          padding: 25px 30px;
+          border-radius: 5px;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        }
+        .container .title{
+
+          font-size: 25px;
+          font-weight: 500;
+          position: relative;
+        }
+        .container .title::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 30px;
+          border-radius: 5px;
+          background: linear-gradient(135deg, #71b7e6, #5999b6);
+        }
+        .content form .user-details{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 20px 0 12px 0;
+        }
+        form .user-details .input-box{
+          margin-bottom: 15px;
+          width: calc(100% / 2 - 20px);
+        }
+        form .input-box span.details{
+          display: block;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        .user-details .input-box input{
+          height: 45px;
+          width: 100%;
+          outline: none;
+          font-size: 16px;
+          border-radius: 5px;
+          padding-left: 15px;
+          border: 1px solid #ccc;
+          border-bottom-width: 2px;
+          transition: all 0.3s ease;
+        }
+        .user-details .input-box input:focus,
+        .user-details .input-box input:valid{
+          border-color: #5984b6;
+        }
+        form .gender-details .gender-title{
+          font-size: 20px;
+          font-weight: 500;
+        }
+        form .category{
+          display: flex;
+          width: 80%;
+          margin: 14px 0 ;
+          justify-content: space-between;
+        }
+        form .category label{
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        form .category label .dot{
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          margin-right: 10px;
+          background: #d9d9d9;
+          border: 5px solid transparent;
+          transition: all 0.3s ease;
+        }
+        #dot-1:checked ~ .category label .one,
+        #dot-2:checked ~ .category label .two,
+        #dot-3:checked ~ .category label .three{
+          background: #5999b6;
+          border-color: #d9d9d9;
+        }
+        form input[type="radio"]{
+          display: none;
+        }
+        form .button{
+          height: 45px;
+          margin: 35px 0
+        }
+        form .button input{
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+          border: none;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: linear-gradient(135deg, #71b7e6, #5991b6);
+        }
+        form .button input:hover{
+          /* transform: scale(0.99); */
+          background: linear-gradient(-135deg, #71b7e6, #59a0b6);
+          }
+        @media(max-width: 584px){
+        .container{
+          max-width: 100%;
+        }
+        form .user-details .input-box{
+            margin-bottom: 15px;
+            width: 100%;
+          }
+          form .category{
+            width: 100%;
+          }
+          .content form .user-details{
+            max-height: 300px;
+            overflow-y: scroll;
+          }
+          .user-details::-webkit-scrollbar{
+            width: 5px;
+          }
+          }
+          @media(max-width: 459px){
+          .container .content .category{
+            flex-direction: column;
+          }
+        }
+        
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+     </style>
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Add Students</div>
+    <div class="content">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" Required name="name" class="form-control" placeholder="Enter Full Name"></div>
+          <div class="input-box">
+            <span class="details">Father Name</span>
+            <input type="text" Required name="father_name" placeholder="Enter Full Name" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" Required name="dob" placeholder="Enter Full Name" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details"> Registration number</span>
+            <input type="text" Required name="reg" placeholder="sp19-bcs-040" pattern="[a-z]{2}[0-9]{2}-[a-z]{3}-[0-9]{3}" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Blood Group</span>
+            <input type="text" Required name="bgroup" placeholder="Enter Full Name" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{5}" Required name="ph" placeholder="310-12-34567" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" Required name="email" placeholder="Enter Full Name"  class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">CNIC </span>
+            <input type="text" Required name="cnic" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" placeholder="37406-1234567-1" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Nationality</span>
+            <input type="text" Required name="nationality" placeholder="Enter Full Name" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Status</span>
+            <select  name="status" id="cars">
+              <option value="Married">Married</option>
+              <option value="Single">Single</option>
+            </select>     
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" Required name="address" placeholder="Enter Full Name" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Gender</span>
+            <select name="gender" id="cars">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>            </div>
+          <div class="input-box">
+            <span class="details">Student Image</span>
+            <input type="file" Required name="image" class="form-control ">
+          </div>
+         
+        </div>
+ 
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+
+          
