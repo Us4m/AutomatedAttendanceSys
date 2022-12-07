@@ -906,14 +906,14 @@
         <div class="upcnt"> 
             <div class="uplftcnt">
                 <div class="primg"> 
-                <img   src="/media/uploads/"></img>20221018161812Usama_Hammad.jpeg
+                  <img src="/media/{{ user.account.image }}" alt="">
                 </div>
                 <div class="prdet">
                     <div class="tital"> 
                     {{request.user.first_name}}  {{request.user.last_name}}
                     </div>
                     <div class="btnttl">
-                    <div class="vp"> View Profile</div>
+                      <a style="text-decoration:none ;" href="/viewprofile"><div  class="vp"> View Profile</div></a> 
                     
                     </div>
                     <div class="lgout" style="margin-left: 135px; margin-top: 0px; "><a href="{% url 'logout'%}"><img style=" width: 30px; height:50px;" src="/media/uploads/lgout.svg" alt=""> </a></div>
@@ -956,8 +956,8 @@
                  </div>
                 <div class="dwic">
                     <div class="ttlh">Having trouble? </div>
-                    <div class="cntus"><span>Contact Us</span> </div>
-                 </div>
+                    <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
+                  </div>
                 </div>
 
 

@@ -1,0 +1,30 @@
+{% extends "AAS/draft.html" %}
+{% block title %} profile {% endblock title %}
+{% block body %}
+
+<div style="display: flex; justify-content: center;  margin-top: 90px; margin-left: 150px; width:100vh ; background-color: rgb(252, 252, 252); height: 100vh; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25); border-radius: 30px; ">
+<div style=" display: flex; flex-direction: column; gap:20px ;  ">
+<img style="width:200px ; margin-top: 30px; margin-left: 190px; height: 200px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  border-radius: 100px; justify-content: center;" src="/media/{{ user.account.image }}" alt="">
+<div style=" margin-left: 45px; width:85vh ; height: 8vh; border-radius: 15px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  font-weight: 100; font-size: 25px; font-family: 'DM Sans', ; color: rgb(36, 36, 36); display: flex; justify-content: center; flex-direction: column; " ><span style=" margin-left: 75px; " >  <b style="font-weight: 700;">USERNAME: </b>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ user.username }}</span></div>
+<div style=" margin-left: 45px; width:85vh ; height: 8vh; border-radius: 15px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  font-weight: 100; font-size: 25px; font-family: 'DM Sans', ; color: rgb(36, 36, 36); display: flex; justify-content: center; flex-direction: column; " ><span style=" margin-left: 75px; " >  <b style="font-weight: 700;">Full Name: </b>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ user.get_full_name }}</span></div>
+<div style=" margin-left: 45px; width:85vh ; height: 8vh; border-radius: 15px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  font-weight: 100; font-size: 25px; font-family: 'DM Sans', ; color: rgb(36, 36, 36); display: flex; justify-content: center; flex-direction: column; " ><span style=" margin-left: 75px; " >  <b style="font-weight: 700;">Phone Number: </b>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ user.account.ph }}</span></div>
+<div style=" margin-left: 45px; width:85vh ; height: 8vh; border-radius: 15px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  font-weight: 100; font-size: 25px; font-family: 'DM Sans', ; color: rgb(36, 36, 36); display: flex; justify-content: center; flex-direction: column; " ><span style=" margin-left: 75px; " >  <b style="font-weight: 700;">Email: </b>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ user.email }}</span></div>
+<div style=" margin-left: 45px; width:85vh ; height: 8vh; border-radius: 15px; box-shadow: 7px 13px 42px 11px rgba(104, 104, 104, 0.25);  font-weight: 100; font-size: 25px; font-family: 'DM Sans', ; color: rgb(36, 36, 36); display: flex; justify-content: center; flex-direction: column; " ><span style=" margin-left: 75px; " >  <b style="font-weight: 700;">Session Started at:  </b> &nbsp;{{ user.last_login }}</span></div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}
+           
