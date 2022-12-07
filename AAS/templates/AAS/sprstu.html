@@ -1,40 +1,22 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Present Student    {% endblock title %} | AAS</title>
+    <link rel="icon" href="/media/uploads/logo.png" type="image/x-icon">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- css -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-        <!-- js -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-            crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<style>
 
-            <link rel="icon" href="/media/uploads/logo.png" type="image/x-icon">
-            <title> {% block title %}Classroom{% endblock title %}| AAS</title>
-            <!-- cdd -->
-             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        
-        
-             <!-- reponsive table -->
-             
-             <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" >
-             
-    <style>
-      .Login{
-      display: flex;
-      height: 800px;
-      /* border: 2px solid black; */
-      background: rgb(32,157,187);
-      background: linear-gradient(286deg, rgba(32,157,187,0.9248074229691877) 70%, rgba(59,123,138,0.9752275910364145) 81%, rgba(10,91,111,1) 94%);
-       
-      }
+
+
+  
       
       .lft{
         /* border: 2px solid rgb(245, 240, 240); */
@@ -594,39 +576,7 @@
       }
       /* Attendance */
       
-      .Attendance{
-        display: flex;
-        flex-direction: column;
-        
-      }
-      .toggle{
-        background-color: #FFFFFF;
-        height: 350px;
-        width: 350px;
-        border-radius: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 100px;
-        margin-left: 300px;
-        box-shadow: -4px 4px 16px hsl(172, 90%, 32%),
-                4px 4px 16px hsl(194, 98%, 67%),
-                inset 4px 4px 16px hsl(160, 100%, 69%),
-                inset -4px -4px 16px hsl(140, 100%, 63%);
-                transition: box-shadow .3s ease-in-out;
-      }
-      .toggle:hover{
-        box-shadow: 4px 4px 16px hsl(177, 36%, 49%),
-        -4px -4px 16px hsl(175, 31%, 59%),
-        inset -4px -4px 16px hsl(172, 77%, 74%),
-        inset 4px 4px 16px hsl(176, 81%, 80%);
-      }
-      .toggle span {
-        font-family:  'Courier New', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        font-style: normal;
-      }
+     
       
       ::-webkit-scrollbar {
         width: 10px;
@@ -697,21 +647,24 @@
           
           gap: 50px;
           flex-wrap: wrap;
-        
+          justify-content: space-between;
         
           
         }
         .stupic{
-          height: 100px;
-          width: 100px;
+          height: 80px;
+          width: 80px;
           border-radius: 20px;
           display: flex;
-          padding: 50px;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+        
+      
+        
+        
+        
         }
-        
-        
-        
-        
         .stupic img {
           height: 100px;
           width: 100px;
@@ -723,12 +676,22 @@
         .studetail{
           display: flex;
           flex-direction: column;
-          margin-top: 80px;
-          margin-left: 60px;
+         padding: 60px;
+         
+         
+        }
+        .studname{
           font-size: 30px;
           font-weight: 600;
-        }
+          font-family:  'DM Sans', sans-serif;
       
+        }
+        .studdetl{
+          font-size: 20px;
+          font-weight: 400;
+          font-family:  'DM Sans', sans-serif;
+      
+        }
       
         .prfbtn{
           height: 50px;
@@ -746,63 +709,66 @@
           display: flex;
         }
         .srch{
-          margin-left: 500px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      
-        .srch input {
-          width: 250px;
-          height: 40px;
-          border-radius: 30px;
-         border: none;
-          background-color: #D5E7F6;
-        }
-        .srch input:focus{
-          outline: none;  
-      
-        }
-      
-        .srch button {
-          border-radius: 50px;
-          background-color: transparent;
-          border: none;
-          
-        }
-       
-      
-        .srch input[type="text"] {
-          color: #877C7C;
-          padding-left: 30px;
-          font-size: 18px;
-        }
-      
+            margin-left: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        
+          .srch input {
+            width: 230px;
+            height: 36px;
+            border-radius: 15px;
+            border: none;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 17px 2px rgba(220, 247, 226, 0.212);                      
+
+
+
+          }
+          .srch input:focus{
+            outline: none; 
+            box-shadow: 0px 0px 17px 2px rgba(220, 247, 226, 0.212);                      
+
+        
+          }
+        
+          .srch button {
+            border-radius: 50px;
+            background-color: transparent;
+            border: none;
+            
+            
+          }
+        
+        
+          .srch input[type="text"] {
+            color: rgb(189, 189, 189);
+            padding-left: 30px;
+            font-size: 16px;
+          }
+          ::placeholder{
+              color: rgb(189, 189, 189);
+            }
+
+                  
         .edbtn{
           
           display: flex;
-          padding: 80px;
-          margin-left: 30px;
-          text-decoration: none;
-          color: black;
+          margin-top: 70px;
+          gap: 20px;
+          margin-right: 40px;
         }
         .edt span{
           background: none;
           background-color: transparent;
       
         }
-        .edbtn a{
-          text-decoration: none;
-          font-size: 15px;
-          font-weight: 600;
-        }
         .edt {
-          
-          color: black;
-          height:45px;
-          width: 110px;
+          height: 50px;
+          width: 60px;
           box-shadow: 0px 0px 17px 2px rgba(177, 177, 177, 0.425);
-
+          
           display: flex;
           justify-content: center;
           align-items: center;
@@ -811,14 +777,32 @@
       
         }
         .edt:hover {
-          height:50px;
-          width: 115px;
+          height: 60px;
+          width: 70px;
           box-shadow: 0px 0px 17px 2px rgba(0, 230, 142, 0.425);
        
       
         }
-     
-
+        .dlt {
+          height: 50px;
+          width: 60px;
+          box-shadow: 0px 0px 17px 2px rgba(177, 177, 177, 0.425);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 70px;
+         
+      
+        }
+      
+        .dlt:hover {
+          height: 60px;
+          width: 70px;
+          box-shadow: 0px 0px 17px 2px rgba(218, 0, 0, 0.425);
+          
+          
+      
+        }
         .adbtn{
           height: 40px;
           width: 120px;
@@ -834,167 +818,198 @@
           font-weight: 400;
           font-family:  'DM Sans', sans-serif;
         }
+        .adbtn:hover{
+          height: 40px;
+          width: 120px;
+          background-color: #00999e;
+          box-shadow: 0px 0px 17px 2px rgba(44, 196, 134, 0.712);
+          border-radius: 30px;
+          margin-left: 360px;
+          font-size: 13px;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 400;
+          font-family:  'DM Sans', sans-serif;
+        }
+        .prescont{
+          background-color: rgb(255, 254, 254);
+          border-radius: 20px;
+          width: 940px;
+          height: 85vh;
+          margin: 20px;
+          display: flex;
+          flex-direction: column;
+          overflow-y: scroll; /* Add the ability to scroll */
+          box-shadow: 0px 0px 17px 2px rgba(218, 218, 218, 0.212);
+        }
+        .prescont::-webkit-scrollbar {
+          width: 10px;
+      }
+      .prescont::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        margin: 50px;
+        border-radius: 20px;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .prescont::-webkit-scrollbar-thumb  {
+        background: rgb(207, 207, 207);/* Firefox */
+        border-radius: 20px;
+      }
+      
+      #studnt {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        width: 100%;
+      }
+      
+       #studnt th {
+       
+        padding: 30px;
+        
+        
+        
+      }
+      
+      
+      #studnt tr{
+        
+      padding: 30px;
      
-     
+      
+       
+      }
+      #studnt td{
+        height: 70px;
+        padding: 30px;
+        
+        
+        
+      }
+      
+      
+      
+      
+ 
       .stcn{
         padding: 45px;
       }
-             
-    </style>
-      
-      </head>
-      <body>
-        <div  style="background-color: rgba(245, 252, 253, 0.94)" >
-          <div class="maiin"> 
-              <div class="upcnt"> 
-                  <div class="uplftcnt">
-                      <div class="primg"> 
-                        <img src="/media/{{ user.account.image }}" alt="">
-                      </div>
-                      <div class="prdet">
-                          <div class="tital"> 
-                          {{request.user.first_name}} {{request.user.last_name}}
-                          </div>
-                          <div class="btnttl">
-                            <a style="text-decoration:none ;" href="/viewprofile"><div  class="vp"> View Profile</div></a> 
-                          
-                          
-                          </div>
-                          <div class="lgout" style="margin-left: 135px; margin-top: 0px; "><a href="{% url 'logout'%}"><img style=" width: 30px; height:50px;" src="/media/uploads/lgout.svg" alt=""> </a></div>
-                      </div>
-                      
-      
-                      <div class="navico"> 
-                      <div class="upici">
-      
-                              <a href="index" style="color:white;text-decoration:none;">
-                                <div class="icco"> 
-                                <div class="icim"><img style="width: 26px; height:26px; "  src="/media/uploads/House_02.svg"> </div>
-                                <div class="icttl"> Dashboard</div>
-                                </div>
-                              </a>
-                              <a href="/students" style="color:white;text-decoration:none;">
-                                <div class="icco"> 
-                                <div class="icim">&nbsp;<img style="width: 26px; height:26px; "  src="/media/uploads/adstu.svg"> </div>
-                                <div class="icttl" style="margin-left: -5px;">Manage Student</div>
-                                </div>
-                              </a>
-                              <a href="/present_student" style="color:white;text-decoration:none;">
-                                <div class="icco"> 
-                                <div class="icim">&nbsp;<img style="width: 26px; height:25px; margin-left: -5px;"  src="/media/uploads/prstu.svg"> </div>
-                                <div class="icttl">Present Student </div>
-                                </div>
-                              </a>
-                              <a href="/TakeAttendance" style="color:white;text-decoration:none;">
-                                <div class="icco"> 
-                                <div class="icim">&nbsp;<img style="width: 23px; height:23px; margin-left: -3px; "  src="/media/uploads/tkatn.svg"> </div>
-                                <div class="icttl">Take Attendance </div>
-                                </div>
-                              </a>
-                              <a href="/class_room" style="color:white;text-decoration:none;">
-                                <div class="icco"> 
-                                <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/media/uploads/clsrm.svg"> </div>
-                                <div class="icttl">Classroom</div>
-                                </div>
-                              </a>
-      
-                             
-                       </div>
-                      <div class="dwic">
-                          <div class="ttlh">Having trouble? </div>
-                          <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
-                        </div>
-                      </div>
-      
-      
-                  </div>
-                  <div class="upritcnt"> 
-                      <div class="tagg"> 
-                          <div class="greet">Good Morning,<span>{% if request.user.is_authenticated %}
-                            {{request.user}} :)
-                            {%endif%} </span> 
-                          </div>
-                          <div class="timee">
-                              <div class="timeeimg"> <img style="width: 20px; height:20px; "  src="/media/uploads/tico.svg"></div>
-                              <div class="tym">{{time}}</div>
-                          </div>
-                      </div>
-                      <div class="Attendance">
-                        {% load static %}
-                        <div class="titl"> 
-                           <div class="headng"> 
-                               Classroom
-                           </div> 
-                          <form method="get" action=" {% url 'searchc'%}">
-                           <div class="srch"> 
-                           <input type="text" placeholder="Search.." name="q"></input>
-                           <button type="submit"><span><img src="/media/uploads/Searchico.svg" alt=""> </span></button>
-                           </div> 
-                          </form>
-                       </div> 
-                       <div class="classroom"> 
-                        <div class="stcn">
-                          {% for p in products %}
-                              <div class="stuclass"> 
-                                
-                              <div class="stupic"> 
-                                {% if p.image %}
-                                    <img src="{{ p.image.url }}" alt="" >
-                                {% else %}
-                                {% endif %}
+           
+         
+</style>
 
-                              </div>
-
-
-                              <div class="studetail"> 
-                                  <div class="studname"> 
-                                    {{ p.name }}
-                                  </div>
-                                
-
-                              </div>
-
-
-                                <div class="edbtn"> 
-                                  <a href="{% url 'view_student' p.id %}"><div class="edt"> 
-                                      View 
-                                    </div></a>
-
-                                   
-                                    
-                                </div>
-
-                              </div>
-                              {% endfor %}
-                                
-                              </div>
-
-                           </div>
-                              </div>
-                        </div>
-      
-        
-                                  
-        
-        
-                              
-                              
+</head>
+<body>
+  <div   style="background-color: rgba(245, 252, 253, 0.94)" >
+    <div class="maiin"> 
+        <div class="upcnt"> 
+            <div style="height:  fit-content ;" class="uplftcnt">
+                <div class="primg"> 
+                  <img src="/media/uploads/ppicc.png" alt="">
+                </div>
+                <div class="prdet">
+                    <div class="tital"> 
+                    {{request.user.first_name}}  {{request.user.last_name}}
+                    </div>
+                    <div class="btnttl">
+                      <a style="text-decoration:none ;" href=" "><div  class="vp"> View Profile</div></a> 
+                    
+                    </div>
+                    <div class="lgout" style="margin-left: 135px; margin-top: 0px; "><a href="{% url 'logout'%}"><img style=" width: 30px; height:50px;" src="/media/uploads/lgout.svg" alt=""> </a></div>
                      
-                       </div>
+                </div>
+                
+
+                <div style="height:280px; margin-bottom: 20px; " class="navico"> 
+                <div class="upici">
+                  <a href="Student_Dashboard" style="color:white;text-decoration:none;">
+                    <div class="icco"> 
+                    <div class="icim"><img style="width: 26px; height:26px; "  src="/media/uploads/House_02.svg"> </div>
+                    <div class="icttl"> Dashboard</div>
+                    </div>
+                  </a>
+                  
+                  <a href="/Present_Students" style="color:white;text-decoration:none;">
+                    <div class="icco"> 
+                    <div class="icim">&nbsp;<img style="width: 26px; height:25px; margin-left: -5px;"  src="/media/uploads/prstu.svg"> </div>
+                    <div class="icttl">Present Student </div>
+                    </div>
+                  </a>
+                  
+                 </div>
+                <div class="dwic">
+                    <div class="ttlh">Having trouble? </div>
+                    <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="upritcnt"> 
+                <div class="tagg"> 
+                    <div class="greet">Good Morning,<span>Student:)</span> </div>
+                    <div class="timee">
+                        <div class="timeeimg"> <img style="width: 20px; height:20px" src="/media/uploads/tico.svg"></img> </div>
+                        <div class="tym"> {{time}}</div>
+                    </div>
+                </div>
+
+
+                <div class="Attendance"> 
+                    <div class="titl"> 
+                      <div>Present Student</div>
+                      <form method="get" action=" {% url 'searcha'%}">
+                        <div class="srch" style="margin-left: 350px;" > 
+                        <input type="text" placeholder="Search.." name="q"></input>
+                        <button type="submit"><span><img src="/media/uploads/Searchico.svg" alt=""> </span></button>
+                        </div> 
+                       </form>
+
+                    </div>
+                    
+                    <div style="height:68vh ;" class="prescont"> 
+                    <table id="studnt">
+                      <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% if data %}
+                                {% for row in data %}
+                        <tr>
+
                           
-                   
-              
-              <div class="dwncnt"> 
-              <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
-              </div>
-          </div>
-      
-      </div>
-      
-      
-      
-      
-      
-      </body>
-      </html>
+                            <td style="display:flex; align-items:center;"><img style="width: 55px; height:55px; border-radius :130px;" src="/media/uploads/{{row.name}}.jpeg"</img> &nbsp;&nbsp; <span>{{row.name}}</span></td>
+                            <td style="color:#3CD298"> Present</td>
+                            <td >{{row.time}}</td>
+                            <td>{{row.date}}</td>
+                        </tr>
+                        
+                        {% endfor %}
+                        {% endif %}
+                      </tbody>
+                        
+                        </table>
+                       
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div style="width:97vw ;" class="dwncnt"> 
+        <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
 

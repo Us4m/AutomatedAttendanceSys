@@ -36,6 +36,85 @@ from datetime import time
 g = datetime.now().strftime("%b %d %Y")
 current_time = datetime.now().strftime('%I:%M %p')
 
+def studashboard(request):
+    todo_list = Todo.objects.order_by('id')
+
+    form = TodoForm()
+
+    context = {'todo_list': todo_list, 'form': form,
+               'date': g, 'time': current_time}
+
+    return render(request, 'AAS/studash.html' ,context)
+
+
+
+@require_POST
+def addTodo(request):
+    form = TodoForm(request.POST)
+
+    if form.is_valid():
+        new_todo = Todo(text=request.POST['text'])
+        new_todo.save()
+
+    return redirect('studashboard')
+
+
+def completeTodo(request, todo_id):
+    todo = Todo.objects.get(pk=todo_id)
+    todo.complete = True
+    todo.save()
+
+    return redirect('studashboard')
+
+
+def deleteCompleted(request):
+    Todo.objects.filter(complete__exact=True).delete()
+
+    return redirect('studashboard')
+
+
+def deleteAll(request):
+    Todo.objects.all().delete()
+
+    return redirect('studashboard')
+
+def vprofile(request):
+
+    return render(request, 'AAS/vprofile.html', {'date': g, 'time': current_time})
+
+
+def spresent_student(request):
+    path = os.path.join(BASE_DIR, "AAS", 'ImagesAttendance')
+    images = []
+    classNames = []
+    myList = os.listdir(path)
+    myimg = os.listdir(path)
+    for cl in myList:
+        classNames.append(os.path.splitext(cl)[0])
+    mylist = zip(classNames, myList)
+    context = {
+        'mylist': mylist,
+    }
+    my_csv = os.path.join(BASE_DIR, "AAS", 'Attendance.csv')
+    reader = pd.read_csv(my_csv)
+    csv_fp = open(f'{my_csv}', 'r+')
+    reader = csv.DictReader(csv_fp)
+    headers = [col for col in reader.fieldnames]
+    out = [row for row in reader]
+    student_data = []
+    for x in out:
+        # print(x)
+        student_data.append(
+            {"name": x['Name'], "time": x['Time'], "date": x['Date']})
+    return render(request, 'AAS/sprstu.html',  {'data': student_data, 'headers': headers, 'clsimg': mylist, 'date': g, 'time': current_time})
+
+
+
+
+
+
+
+
 # Create your views here.
 
 

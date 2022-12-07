@@ -3,9 +3,24 @@ from django.db import models
 # Create your models here.
 
 from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
 import datetime
 import os
+
+def filepath(request, filename):
+    old_filename = filename
+    
+    return os.path.join('uploads/', filename)
+
+class Account(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=filepath, null=True, blank=True)
+    ph = models.TextField(max_length=50)
+
+    def __str__(self):
+        return self.user.username
+
 
 class Todo(models.Model):
     text = models.CharField(max_length=40)
@@ -16,8 +31,6 @@ class Todo(models.Model):
 
 def filepath(request, filename):
     old_filename = filename
-    timeNow = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
-    filename = "%s%s" % (timeNow, old_filename,)
     return os.path.join('uploads/', filename)
 
 class Student(models.Model):

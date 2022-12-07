@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="icon" href="/media/uploads/logo.png" type="image/x-icon">
-    <title> {% block title %}{% endblock title %}| AAS</title>
+    <title> Student Dashboard | AAS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- css -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -1066,16 +1066,16 @@
    
     <div class="maiin"> 
         <div class="upcnt"> 
-            <div class="uplftcnt">
+            <div style="height:  fit-content ;" class="uplftcnt">
                 <div class="primg"> 
-                <img src="/media/{{ user.account.image }}" alt="">
+                    <img src="/media/uploads/ppicc.png" alt="">
                 </div>
                 <div class="prdet">
                     <div class="tital"> 
-                      {{request.user.first_name}}  {{request.user.last_name}}
+                      {{request.student.first_name}}  {{request.student.last_name}}
                     </div>
                     <div class="btnttl">
-                   <a style="text-decoration:none ;" href="/viewprofile"><div  class="vp"> View Profile</div></a> 
+                   <a style="text-decoration:none ;" href=" "><div  class="vp"> View Profile</div></a> 
                     
                     
                     </div>
@@ -1083,39 +1083,24 @@
                 </div>
                 
 
-                <div class="navico"> 
+                <div style="height:280px; margin-bottom: 20px; " class="navico"> 
                 <div class="upici">
 
-                        <a href="/index" style="color:white;text-decoration:none;">
+                        <a href="/Student_Dashboard" style="color:white;text-decoration:none;">
                           <div class="icco"> 
                           <div class="icim"><img style="width: 26px; height:26px; "  src="/media/uploads/House_02.svg"> </div>
                           <div class="icttl"> Dashboard</div>
                           </div>
                         </a>
-                         <a href="/students" style="color:white;text-decoration:none;">
-                          <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 26px; height:26px; "  src="/media/uploads/adstu.svg"> </div>
-                          <div class="icttl" style="margin-left: -5px;">Manage Student</div>
-                          </div>
-                        </a> 
-                        <a href="/present_student" style="color:white;text-decoration:none;">
+                    
+                        <a href="/Present_Students" style="color:white;text-decoration:none;">
                           <div class="icco"> 
                           <div class="icim">&nbsp;<img style="width: 26px; height:25px; margin-left: -5px;"  src="/media/uploads/prstu.svg"> </div>
-                          <div class="icttl">Present Student </div>
+                          <div class="icttl">Present Students </div>
                           </div>
                         </a>
-                        <a href="/TakeAttendance" style="color:white;text-decoration:none;">
-                          <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 23px; height:23px; margin-left: -3px; "  src="/media/uploads/tkatn.svg"> </div>
-                          <div class="icttl">Take Attendance </div>
-                          </div>
-                        </a>
-                        <a href="/class_room" style="color:white;text-decoration:none;">
-                          <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/media/uploads/clsrm.svg"> </div>
-                          <div class="icttl">Classroom</div>
-                          </div>
-                        </a>
+                      
+                      
 
                        
                  </div>
@@ -1131,19 +1116,91 @@
                 <div >
                   
                 <div class="tagg"> 
-                    <div class="greet">Good Morning,<span>{% if request.user.is_authenticated %}
-                      {{request.user}} :)
-                      {%endif%} </span> 
+                    <div class="greet">Good Morning,<span> Student :) </span> 
                     </div>
                     <div class="timee">
                         <div class="timeeimg"> <img style="width: 20px; height:20px; "  src="/media/uploads/tico.svg"></div>
                         <div class="tym"> {{time}}</div>
                     </div>
                 </div>
-               {% block body %}
-
-
-               {% endblock body %}
+               
+  
+<div class="dashboard"> 
+    <div class="titl"> 
+    Dashboard
+    </div>
+    <div class="contnt"> 
+        <div class="lftsec"> 
+                <div class="lseci"> 
+                    <div class="lsecittl"> Event</div>
+                    <div class="lsecidt"> {{date}}</div>
+                    <div class="lsecihstry">No event Today </div>
+                </div>
+            <div style="	height: fit-content;" class="lsecii">
+                <div class="lseciittl">Notification 
+                </div>
+                
+                <div style=" margin-bottom: 10px;" class="lseciintifctin">
+                    <div class="ntifctin"><span>Lorem ipsum</span> </div>
+                    <div class="ntifctin"><span>Lorem ipsum</span> </div>
+                  
+                   
+                    
+            
+                </div> 
+            </div>
+        </div>
+        <div style="height:400px ;" class="ritsec"> 
+            <div class="rseci"> Todo Activities</div>
+            <div class="rsecii"> 
+            
+              
+              {% load static %}
+            
+                      <form style="" action="{% url 'add' %}" method="POST" role="form">
+                          {% csrf_token %}
+                          <div class="inp">
+                            <div>{{ form.text }}</div>  
+                              <div class="abtn" style="display: flex; margin-top: 20px; gap: 5px; justify-content: center;  "><button style="width: 100px; border-radius: 30px; background-color: #ffffffb4; color: #a3a3a3;box-shadow: 0px 0px 17px 2px rgba(133, 134, 134, 0.123); border: transparent; font-size: 13px; padding: 4px; height: 35px;" type="submit" class="" >ADD</button>
+                                  <a href="{% url 'deletecomplete' %}"><button style="width: 100px; border-radius: 30px; background-color: #ffffffb4; color: #a3a3a3;box-shadow: 0px 0px 17px 2px rgba(133, 134, 134, 0.123); border: transparent; font-size: 13px; padding: 4px; height: 35px;" type="button" >
+                                  COMPLETED
+                                  </button></a>
+                              
+                                  <a href="{% url 'deleteall' %}"><button style="width: 100px; border-radius: 30px; background-color: #ffffffb4; color: #a3a3a3;box-shadow: 0px 0px 17px 2px rgba(133, 134, 134, 0.123); border: transparent; font-size: 13px; padding: 4px; height: 35px;" type="button" >
+                                       DELETE ALL
+                                  </button></a></div>
+                                  
+                              </div>
+                      </form>
+  
+                      
+                                     
+                       
+                      <div class="list-group t20" style="display: flex; justify-content: center; border-radius: 30px;">
+                      
+                      {% for todo in todo_list %}
+                          {% if todo.complete %}
+                          <div>
+                              <span>Task Completed</span>
+                          <li style="border-radius: 30px; display: flex; justify-content: center; width: fit-content; margin-top: 10px; margin-bottom: 10px; color: rgb(103, 170, 2);" class="list-group-item todo-completed">{{ todo.text }}</li>
+                          {% else %}
+                          <span>Task Todo (click on task when done)</span>
+                          <a href="{% url 'complete' todo.id %}"><li style="border-radius: 30px; color: rgb(216, 5, 5); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600; margin-top: 10px; align-items: center; width: fit-content; display: flex; justify-content: center; " class="list-group-item">{{ todo.text }}</li></a>
+                          {% endif %}
+                      {% endfor %}
+                      </div>
+                      </div>
+                  </div>
+              </div>
+  
+      
+  </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+  </div>
                
             </div>
         </div>
