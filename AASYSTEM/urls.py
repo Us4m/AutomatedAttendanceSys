@@ -31,4 +31,6 @@ urlpatterns = [
     # re_path(r'media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
     re_path(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^ImagesAttendance/(?P<path>.*)$', serve,
+        {'document_root': settings.STATIC_URL}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
