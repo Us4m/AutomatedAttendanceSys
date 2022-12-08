@@ -174,7 +174,7 @@ def contactus(request):
         contactus.save()
         messages.success(
             request, 'Message sent sucessfully our team get in touch soon.')
-        return render(request, 'AAS/index.html')
+        return render(request, 'AAS/contactus.html')
     else:
         return render(request, 'AAS/contactus.html')
 
