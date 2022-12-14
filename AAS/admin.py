@@ -6,7 +6,7 @@ from .models import AttendanceImage
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from .models import Account
-
+ 
 from .models import Todo
 
 
