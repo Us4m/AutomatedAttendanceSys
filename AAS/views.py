@@ -36,6 +36,8 @@ from datetime import time
 g = datetime.now().strftime("%b %d %Y")
 current_time = datetime.now().strftime('%I:%M %p')
 
+
+@login_required(login_url='loginstu')
 def studashboard(request):
     todo_list = Todo.objects.order_by('id')
 
@@ -82,7 +84,7 @@ def vprofile(request):
 
     return render(request, 'AAS/vprofile.html', {'date': g, 'time': current_time})
 
-
+@login_required(login_url='loginstu')
 def spresent_student(request):
     path = os.path.join(BASE_DIR, "AAS", 'ImagesAttendance')
     images = []
@@ -256,6 +258,23 @@ def login(request):
             messages.info(request, 'Either Username or Password in incorrect')
     return render(request, 'AAS/login_register.html')
 
+
+
+def loginstu(request):
+
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, 'Profile Login Successfully.')
+            return redirect('studashboard')
+
+        else:
+            messages.info(request, 'Either Username or Password in incorrect')
+    return render(request, 'AAS/login_register.html')
 
 def logout(request):
     logout1(request)

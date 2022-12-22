@@ -18,6 +18,7 @@ urlpatterns = [
     path('download/', views.download_file),
     path('dashboard', views.dashboard, name='dashboard'),
     path('login', views.login, name='login'),
+    path('loginstu', views.loginstu, name='loginstu'),
      path('Student_Dashboard', views.studashboard, name='studashboard'),
     path('Present_Students', views.spresent_student, name='spresent_student'),
     path('viewprofile', views.vprofile, name='vprofile'),
