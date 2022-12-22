@@ -15,6 +15,7 @@ from django.views.static import serve  # add this
 urlpatterns = [
     path('logout/', RedirectView.as_view(url='/admin/logout/')),
     path('index', views.index, name='index'),
+    path('download/', views.download_file),
     path('dashboard', views.dashboard, name='dashboard'),
     path('login', views.login, name='login'),
      path('Student_Dashboard', views.studashboard, name='studashboard'),
