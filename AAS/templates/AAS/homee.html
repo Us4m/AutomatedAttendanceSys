@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/media/uploads/logo.png" type="image/x-icon">
     <title> {% block title %}Welcome{% endblock title %} | AAS</title></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .main{
             display: flex;
             flex-direction: column;
+            
+            width: 100vw;
+            height: 100vw;
         }
         .i{
             display: flex;
@@ -17,6 +21,7 @@
         }
         .ini{
             display: flex;
+            
         }
         .inii{
             display: flex;
@@ -40,13 +45,13 @@
 
 
         .dwncnt{
-            width: 100vw;
+            width: 96vw; 
+            margin-top: 80px; 
             height: 150px;
             background: linear-gradient(90deg, #065C71 8.33%, #013845 48.52%, #065C71 75.37%);
             border-radius: 27px;
             margin-left: 10px;
             margin-bottom: 10px;
-            margin-top: 30px;
             display: flex;
             justify-content: space-around;
 
@@ -84,6 +89,10 @@
         .tag{
             margin-left: 120px;
             margin-top: 40px;
+            
+        }
+        .admnimg{
+            margin-left: 40px;
         }
         .inii{
             font-family: 'Inter' , sans-serif;
@@ -96,7 +105,7 @@
             padding: 30px;
         }
         .iniii{
-            margin: 40px;
+            margin: -30px;
             
         }
        
@@ -122,8 +131,134 @@
             margin-top: 20px;
             padding: 20px   ;
         }
+        .admn{
+            width:300px ;
+            height: 274px;
+
+        }
+        .teachr{
+            width: 27vw;
+            height: 47vh;
+        }
+        .tchrimg img{
+            margin-top: 25px;
+        }
+        .admn{
+            width: 27vw;
+            height: 47vh;
+        }
+        .admnimg {
+            width: 15vw;
+            height: 37vh; 
+        }
+        .admnimg img{
+
+
+             margin-top: 25px;
+             margin-left: 80px;
+        }
+        .studnt{
+            width: 27vw;
+            height: 47vh;
+        }
+
+        .stdntimg{
+            width: 21vw;
+            height: 35vh
+        }
+        .stdntimg img{
+            margin-top: 20px;
+             margin-left: 54px;
+        }
+        
+        
+        /* On screens that are 992px or less, set the background color to blue */
+        @media screen and (max-width: 1092px) {
+            .tag{
+           margin-left: 20px;
+           margin-top: 70px;
+            
+            
+        }
+        .ptg{
+            font-size: 25px;
+            font-weight: 800;
+            width: 500px;
+            
+        }
+        
+
+        /* On screens that are 600px or less, set the background color to olive */
+        @media screen and (max-width: 600px) {
+            .tag{
+           margin-left: 50px;
+           margin-top: 70px;
+            
+            
+        }
+        .ptg{
+            font-size: 25px;
+            font-weight: 800;
+            width: 500px;
+            
+            
+        }
+        .ini{
+            display: flex;
+            
+            margin-left: -30px;
+            
+        }
+        .inii{
+            margin-left: 30px;
+            width: 600px;
+        }
+        .iniii{
+            display: flex;
+            flex-direction: column;
+            margin-left: 200px;
+            width: 100vw;
+            
+        }
+        .teachr{
+            width: 450px;
+            margin-left: -40px;
+           
+        }
+        .admn{
+            width: 420px;
+            margin-left: -40px;
+        }
+        .admnimg{
+            margin-left: 145px;
+        }
+        
+        .studnt{
+            width: 450px;
+            margin-left: -40px;
+            
+        }
+
+        .stdntimg{
+            
+        }
+        .stdntimg img{
+            width: 270px;
+            margin-top: 20px;
+             margin-left: 54px;
+        }
+
+        .dwncnt{
+            width:730px ; 
+            margin-top: 80px; 
+            height: 150px;
+            
+    }
+}
     </style>
-<body>
+
+<body style="background-color: rgba(245, 252, 253, 0.94)" >
+   
     <div class="mainn">
         <div class="i">
 
@@ -144,15 +279,15 @@
 
             <div class="iniii">
                 <a href="admin">
-                <div style="  background-color:#e4e4e4b2; padding: 30px; width:300px ; border-radius: 30px; height: 274px; " class="admn">
-                    <div class="admnimg">
-                        <img style="margin-left:37px  ; margin-top: 10px; width: 200px;" src="/media/uploads/admin.svg" alt="admin">
+                <div style="   background:  rgb(255, 255, 255); box-shadow: 0 8px 32px 0 rgba(149, 255, 211, 0.37);  border-radius: 30px;  " class="admn">
+                    <div class="admnimg" style="display: flex; justify-content: center;">
+                        <img  src="/media/uploads/admin.svg" alt="admin">
                     </div>
                     <div style="margin-top:-1px ;" class="admnttl">Admin</div>
                 </div>
                  </a>
                 <a href="index">
-                <div style="  background-color:#e4e4e4b2; padding: 20px; border-radius: 30px;  " class="teachr">
+                <div style="   background:  rgb(255, 255, 255); box-shadow: 0 8px 32px 0 rgba(149, 255, 211, 0.37);  border-radius: 30px;  " class="teachr">
                     <div class="tchrimg">
                         <img style="margin-left:20px ;" src="/media/uploads/teachr.svg" alt="teacher">
                     </div>
@@ -160,9 +295,9 @@
                 </div>
                 </a>
                 <a href="Student_Dashboard">
-                <div style="  background-color:#e4e4e4b2; width:300px ; padding: 20px;border-radius: 30px; height: 289px;" class="studnt">
+                <div style=" background:  rgb(255, 255, 255); box-shadow: 0 8px 32px 0 rgba(149, 255, 211, 0.37);  border-radius: 30px;" class="studnt">
                     <div class="stdntimg">
-                        <img style="margin-left:50px ; margin-top: 10px; width: 180px;" src="/media/uploads/studnf.svg" alt="">
+                        <img style="" src="/media/uploads/studnf.svg" alt="">
                     </div>
                     <div class="studntname">Student</div>
                 </div>
@@ -171,7 +306,7 @@
 
 
         </div>
-            <div style="width: 96vw;" class="dwncnt"> 
+            <div style="" class="dwncnt"> 
               <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
             </div>
         

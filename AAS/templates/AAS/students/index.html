@@ -37,6 +37,7 @@
               <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
              
              <style>
+          
                   .Login{
                   display: flex;
                   height: 800px;
@@ -368,7 +369,7 @@
                   }
                   
                   .dwncnt{
-                    width: 100vw;
+                    width: 96vw;
                     height: 150px;
                     background: linear-gradient(90deg, #065C71 8.33%, #013845 48.52%, #065C71 75.37%);
                   border-radius: 27px;
@@ -665,7 +666,7 @@
                       background-color: rgb(255, 254, 254);
                       border-radius: 20px;
                       width: 940px;
-                      height: 82vh;
+                      height: 72vh;
                       margin: 20px;
                       display: flex;
                       flex-wrap: wrap;
@@ -1008,12 +1009,19 @@
                    .close-btn:hover{
                     background: #c46969;
                    }
+                   @media screen and (max-width: 600px) {
+                    .dwncnt{
+                        width:340vw ; 
+                        
+                        height: 150px;}
+                        
+                }
                         
             </style>
       
       </head>
-      <body>
-        <div  style="background-color: rgba(245, 252, 253, 0.94)" >
+      <body style="background-color: rgba(245, 252, 253, 0.94)">
+        <div >
           <div class="alert show">
             <span class=" fas circle"><img style="width: 20px; height:20px; "  src="/media/uploads/info.svg"></span>
             <span class="msgg">
@@ -1172,7 +1180,7 @@
                           
                    
               
-              <div style="width: 97vw;" class="dwncnt"> 
+              <div  class="dwncnt"> 
               <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
               </div>
           </div>

@@ -18,6 +18,13 @@
       <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
       <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
       <style>
+        @media screen and (max-width: 600px) {
+          .dwncnt{
+              width:280vw ; 
+              margin-top: 80px; 
+              height: 150px;}
+              
+      }
         .Login{
                     display: flex;
                     height: 800px;
@@ -349,7 +356,7 @@
                   }
 
                   .dwncnt{
-                    width: 100vw;
+                    width: 97vw;
                     height: 150px;
                     background: linear-gradient(90deg, #065C71 8.33%, #013845 48.52%, #065C71 75.37%);
                   border-radius: 27px;
@@ -413,13 +420,21 @@
                     text-decoration: none;
                   }
 
+                  @media screen and (max-width: 600px) {
+                    .dwncnt{
+                        width:340vw ; 
+                        
+                        height: 150px;}
+                        
+                }
+
 
       </style>
 
 </head>
-<body>
+<body style="background-color: rgba(245, 252, 253, 0.94); " >
   
-  <div  style="background-color: rgba(245, 252, 253, 0.94); width: 100vw; " >
+  <div  >
     <div class="maiin"> 
         <div class="upcnt"> 
             <div class="uplftcnt">
@@ -485,13 +500,13 @@
             </div>
             <div class="upritcnt"> 
                 <div class="tagg"> 
-                    <div class="greet">Good Morning,<span>{% if request.user.is_authenticated %}
+                    <div style="width: 250px;" class="greet">Good Morning,<span>{% if request.user.is_authenticated %}
                       {{request.user}} :)
                       {%endif%} </span> 
                     </div>
                     <div class="timee">
                         <div class="timeeimg"> <img style="width: 20px; height:20px; "  src="/media/uploads/tico.svg"></div>
-                        <div class="tym"> {{time}}</div>
+                        <div style="width: 150px;" class="tym"> {{time}}</div>
                     </div>
                 </div>
                 <div class="Attendance"> 
@@ -507,7 +522,7 @@
                 </div>
             </div>
         </div>
-        <div style="width: 97vw;" class="dwncnt"> 
+        <div  class="dwncnt"> 
         <div class="cpr">Copyright 2022.&nbsp; All Rights Reserved</div>
         </div>
     </div>
