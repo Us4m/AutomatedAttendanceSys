@@ -25,7 +25,7 @@ from AAS.models import Contactus
 from AAS.models import Course
 from AAS.models import AttendanceImage
 
-
+from AAS.models import Attendance
 import os
 import pandas as pd
 import io
@@ -410,6 +410,8 @@ def Attendance(request):
                 dtString = now.strftime('%H:%M:%S')
                 dtStrings = today.strftime("%b-%d-%Y")
                 f.writelines(f'\n{name},{dtString},{dtStrings}')
+                ## Saving data to database
+                Attendance.objects.create(name=name, date=dtStrings, time=dtString)
 
     encodeListKnown = findEncodings(images)
     print(len(encodeListKnown))
