@@ -143,5 +143,5 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/ImagesAttendance/'
 STATICFILES_DIRS = [
     BASE_DIR / "info/ImagesAttendance",
-    os.path.join(BASE_DIR, 'staticfiles-build', "static")
+    # os.path.join(BASE_DIR, 'staticfiles-build', "static")
  ]
