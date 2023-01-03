@@ -1,0 +1,222 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title> Login | AAS</title></head>
+    <link rel="icon" href="/ImagesAttendance/info/images/logo.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+
+  <!-- Bootstrap core CSS-->
+  <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static '/info/bootstrap/css/sb-admin.css' %}" rel="stylesheet">
+  <style>
+    body {
+      display: block;
+      margin: 0px;
+    }
+    .Login{
+    display: flex;
+    height: 800px;
+    /* border: 2px solid black; */
+    background: rgb(32,157,187);
+    background: linear-gradient(286deg, rgba(32,157,187,0.9248074229691877) 70%, rgba(59,123,138,0.9752275910364145) 81%, rgba(10,91,111,1) 94%);
+  
+    }
+  
+    .lft{
+      /* border: 2px solid rgb(245, 240, 240); */
+  
+      width: 800px;
+      
+  
+  
+  
+    }
+    .rit img{
+      width: 500px;
+      height: 400px;
+      margin-top: -220px;
+      margin-left: -320px;
+    }
+  
+    .rit img {
+      animation: updown 3s linear infinite;
+    }
+    @keyframes updown {
+        0% {
+            transform: translateY(-20px);
+        }
+        50% {
+            transform: translateY(20px);
+        }
+        100% {
+            transform: translateY(-20px);
+        }
+    }
+    .ttl{
+      font-family:  'DM Sans', sans-serif;
+      font-weight: 600;
+      color: #FFFFFF;
+      font-size: 22px;
+      margin-left: 30px;
+      margin-top: 50px;
+    }
+    .msg{
+      font-family:  'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin-left: 30px;
+      color: #FFFFFF;
+    }
+    .rit{
+      border-top-left-radius: 135px;
+      border-bottom-left-radius: 135px;
+      /* border: 2px solid rgb(234, 247, 187); */
+      background: #FFFFFF;
+      width: 990px;
+      margin-left: -350px;
+    }
+    .sin{
+      display: flex;
+      flex-direction: column;
+  
+    }
+    .titlsign{
+      font-family:  'Roboto', sans-serif;
+      margin-left: 200px;
+      font-weight: 400;
+      font-size: 57px;
+      margin-top: 100px;
+    }
+    .frm{
+      margin-left: 250px;
+      margin-top: 100px;
+    }
+    .mb-un input {
+      width: 400px;
+      height: 50px;
+      border-radius: 30px;
+      border: #FFFFFF;
+      background-color: #D5E7F6;
+      
+    }
+    .mb-psd input {
+      width: 400px;
+      height: 50px;
+      border-radius: 30px;
+      border: #FFFFFF;
+      background-color: #D5E7F6;
+      
+    }
+    input[placeholder="Username" ] {
+      color: #877C7C;
+      padding-left: 40px;
+    }
+  
+    input[placeholder="Enter Password"] {
+      color: #877C7C;
+      padding-left: 40px;
+    }
+    input:focus{
+      outline: none;
+    }
+  
+    .frm{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .sbt button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4px;
+      width: 130px;
+      text-decoration: none;
+      height: 40px;
+      border-radius: 30px;
+      color: aliceblue;
+      border: transparent;
+      background-color: #116782;
+      margin-left: 145px;
+    }
+    .fgtt {
+    font-family:  'Hammersmith One', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: -120px;
+    margin-left: 300px;
+    }
+  </style>
+  </head>
+  <body>
+    
+  
+  
+  
+  <div class="Login">
+         
+    <div class="lft">
+      <div class="ttl">Automated Atendance Portal</div>
+      <div class="msg">Experience With Us</div>
+    </div>
+    {/* <div class="imgg"></div> */}
+    
+    
+    <div class="rit">
+    <div class="sin">
+    <div class="titlsign">Signin </div>
+    <div class="frm">
+    
+              <form class=" " method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                
+                <div class="sbt">
+                <button  class="btn btn-success" type="submit">Login</button>
+              </div>
+              </form>
+    
+  
+            </div>
+    
+            <img src="/ImagesAttendance/info/images/loginimg.svg" alt="">
+          
+            </div>
+            <div class="fgtt">
+              <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Forgot Password </span> </div></a>
+            </div>
+               
+          
+            </div>
+          
+          
+            </div>
+          
+            <!-- <div class="container">
+              <label for="username"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+          
+              <label for="password"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+                  
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div> -->
+          
+            
+          </form>
+          
+          </body>
+          </html>
+          
