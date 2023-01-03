@@ -30,6 +30,7 @@ import os
 import pandas as pd
 import io
 import csv
+from AAS.models import Attendance
 
 from datetime import datetime
 from datetime import time
@@ -358,7 +359,7 @@ def searcha(request):
 
 # ================ Attendance page and ML Model depolyment  ===================
 @login_required(login_url='login')
-def Attendance(request):
+def Attendancee(request):
 
     from fileinput import filename
     import cv2
@@ -410,6 +411,8 @@ def Attendance(request):
                 dtString = now.strftime('%H:%M:%S')
                 dtStrings = today.strftime("%b-%d-%Y")
                 f.writelines(f'\n{name},{dtString},{dtStrings}')
+                ## Saving data to database
+                Attendance.objects.create(name=name, date=dtStrings, time=dtString)
 
     encodeListKnown = findEncodings(images)
     print(len(encodeListKnown))

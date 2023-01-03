@@ -6,6 +6,7 @@ from .models import AttendanceImage
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from .models import Account
+from .models import Attendance
  
 from .models import Todo
 
@@ -23,6 +24,7 @@ admin.site.unregister(User)
 admin.site.register(User, CustomizedUserAdmin )
 
 admin.site.register(Todo)
+admin.site.register(Attendance)
 
 
 # Register your models here.

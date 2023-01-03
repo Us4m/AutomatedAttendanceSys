@@ -71,3 +71,11 @@ class Contactus(models.Model):
 
     def __str__(self) :
         return self.name
+
+class Attendance(models.Model):
+    name = models.CharField(max_length=120)
+    date = models.DateField()
+    time = models.TimeField()
+
+    def __str__(self) :
+        return self.name
